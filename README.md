@@ -83,8 +83,8 @@ class AnotherInterceptor : Interceptor {
 class MyNetworkProvider {
     fun provideNetwork(): Network {
         return ExtendedNetwork()
-            .addInterceptor(MyInterceptor())
-            .addInterceptors(listOf(
+            .addInterceptor(MyInterceptor()) // function to add interceptor 1 by 1
+            .addInterceptors(listOf(         // function to add batch of interceptors
                 AnotherInterceptor()
             ))
     }
